@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DC7873D51E8359F8003A7D63 /* EntryModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7873D41E8359F8003A7D63 /* EntryModels.swift */; };
+		DC7873D71E835AFE003A7D63 /* BLEntryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7873D61E835AFE003A7D63 /* BLEntryVC.swift */; };
+		DC7873D91E835B09003A7D63 /* BLPlayerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7873D81E835B09003A7D63 /* BLPlayerVC.swift */; };
+		DC7873DB1E835D5B003A7D63 /* BLNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7873DA1E835D5B003A7D63 /* BLNetworkManager.swift */; };
 		DCB6B5751E8209400097FFC6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB6B5741E8209400097FFC6 /* AppDelegate.swift */; };
 		DCB6B5771E8209400097FFC6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB6B5761E8209400097FFC6 /* ViewController.swift */; };
 		DCB6B57A1E8209400097FFC6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCB6B5781E8209400097FFC6 /* Main.storyboard */; };
@@ -34,6 +38,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DC7873D41E8359F8003A7D63 /* EntryModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntryModels.swift; sourceTree = "<group>"; };
+		DC7873D61E835AFE003A7D63 /* BLEntryVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BLEntryVC.swift; sourceTree = "<group>"; };
+		DC7873D81E835B09003A7D63 /* BLPlayerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BLPlayerVC.swift; sourceTree = "<group>"; };
+		DC7873DA1E835D5B003A7D63 /* BLNetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BLNetworkManager.swift; sourceTree = "<group>"; };
 		DCB6B5711E8209400097FFC6 /* BLDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BLDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCB6B5741E8209400097FFC6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DCB6B5761E8209400097FFC6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -74,6 +82,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DC7873CF1E8359AA003A7D63 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				DC7873D61E835AFE003A7D63 /* BLEntryVC.swift */,
+				DC7873D81E835B09003A7D63 /* BLPlayerVC.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		DC7873D01E8359AA003A7D63 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				DC7873DA1E835D5B003A7D63 /* BLNetworkManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		DC7873D11E8359AA003A7D63 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				DC7873D41E8359F8003A7D63 /* EntryModels.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		DCB6B5681E8209400097FFC6 = {
 			isa = PBXGroup;
 			children = (
@@ -97,6 +130,9 @@
 		DCB6B5731E8209400097FFC6 /* BLDemo */ = {
 			isa = PBXGroup;
 			children = (
+				DC7873CF1E8359AA003A7D63 /* Controllers */,
+				DC7873D01E8359AA003A7D63 /* Managers */,
+				DC7873D11E8359AA003A7D63 /* Models */,
 				DCB6B5741E8209400097FFC6 /* AppDelegate.swift */,
 				DCB6B5761E8209400097FFC6 /* ViewController.swift */,
 				DCB6B5781E8209400097FFC6 /* Main.storyboard */,
@@ -262,8 +298,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC7873D91E835B09003A7D63 /* BLPlayerVC.swift in Sources */,
 				DCB6B5771E8209400097FFC6 /* ViewController.swift in Sources */,
+				DC7873D51E8359F8003A7D63 /* EntryModels.swift in Sources */,
 				DCB6B5751E8209400097FFC6 /* AppDelegate.swift in Sources */,
+				DC7873DB1E835D5B003A7D63 /* BLNetworkManager.swift in Sources */,
+				DC7873D71E835AFE003A7D63 /* BLEntryVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -512,6 +552,7 @@
 				DCB6B59B1E8209410097FFC6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DCB6B59C1E8209410097FFC6 /* Build configuration list for PBXNativeTarget "BLDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -520,6 +561,7 @@
 				DCB6B59E1E8209410097FFC6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DCB6B59F1E8209410097FFC6 /* Build configuration list for PBXNativeTarget "BLDemoUITests" */ = {
 			isa = XCConfigurationList;
@@ -528,6 +570,7 @@
 				DCB6B5A11E8209410097FFC6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

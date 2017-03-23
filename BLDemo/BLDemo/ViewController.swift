@@ -12,7 +12,18 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        // TESTING DOWNLOAD DATA SHOULD MOVE TO UNIT TEST LATER
+        
+        let downloadEntries = BLNetworkManager.downloadEntries { unProcessedArray in
+            guard let response = unProcessedArray else {
+                print("Something is wrong")
+                return
+            }
+            let entries = BLParser.parse(response)
+            dump(entries)
+        }
+        downloadEntries.resume()
     }
 
     override func didReceiveMemoryWarning() {
@@ -20,6 +31,9 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    
+    
+    
 
 }
 
