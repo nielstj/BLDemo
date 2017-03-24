@@ -42,8 +42,6 @@ struct BLNetworkManager {
 
 struct BLParser {
     static func parse(_ input: Array<[String : Any]>) -> [BLEntry] {
-        return input.map({ entryJSON -> BLEntry in
-            return BLEntry.createFrom(entryJSON)
-        })
+        return input.map{ BLEntry.createFrom($0) }
     }
 }

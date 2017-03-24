@@ -14,4 +14,7 @@ class BLPlayerVC: UIViewController {
         super.viewDidLoad()
     }
     
+    @IBAction func backTapped(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
 }

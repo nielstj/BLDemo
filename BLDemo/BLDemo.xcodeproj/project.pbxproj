@@ -11,8 +11,8 @@
 		DC7873D71E835AFE003A7D63 /* BLEntryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7873D61E835AFE003A7D63 /* BLEntryVC.swift */; };
 		DC7873D91E835B09003A7D63 /* BLPlayerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7873D81E835B09003A7D63 /* BLPlayerVC.swift */; };
 		DC7873DB1E835D5B003A7D63 /* BLNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7873DA1E835D5B003A7D63 /* BLNetworkManager.swift */; };
+		DC7873E01E84BBE0003A7D63 /* UIImageViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7873DF1E84BBE0003A7D63 /* UIImageViewExtensions.swift */; };
 		DCB6B5751E8209400097FFC6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB6B5741E8209400097FFC6 /* AppDelegate.swift */; };
-		DCB6B5771E8209400097FFC6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB6B5761E8209400097FFC6 /* ViewController.swift */; };
 		DCB6B57A1E8209400097FFC6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCB6B5781E8209400097FFC6 /* Main.storyboard */; };
 		DCB6B57C1E8209400097FFC6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DCB6B57B1E8209400097FFC6 /* Assets.xcassets */; };
 		DCB6B57F1E8209400097FFC6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCB6B57D1E8209400097FFC6 /* LaunchScreen.storyboard */; };
@@ -42,9 +42,9 @@
 		DC7873D61E835AFE003A7D63 /* BLEntryVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BLEntryVC.swift; sourceTree = "<group>"; };
 		DC7873D81E835B09003A7D63 /* BLPlayerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BLPlayerVC.swift; sourceTree = "<group>"; };
 		DC7873DA1E835D5B003A7D63 /* BLNetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BLNetworkManager.swift; sourceTree = "<group>"; };
+		DC7873DF1E84BBE0003A7D63 /* UIImageViewExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageViewExtensions.swift; sourceTree = "<group>"; };
 		DCB6B5711E8209400097FFC6 /* BLDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BLDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCB6B5741E8209400097FFC6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		DCB6B5761E8209400097FFC6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		DCB6B5791E8209400097FFC6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DCB6B57B1E8209400097FFC6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DCB6B57E1E8209400097FFC6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -107,6 +107,14 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		DC7873DE1E84BBD0003A7D63 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				DC7873DF1E84BBE0003A7D63 /* UIImageViewExtensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		DCB6B5681E8209400097FFC6 = {
 			isa = PBXGroup;
 			children = (
@@ -133,8 +141,8 @@
 				DC7873CF1E8359AA003A7D63 /* Controllers */,
 				DC7873D01E8359AA003A7D63 /* Managers */,
 				DC7873D11E8359AA003A7D63 /* Models */,
+				DC7873DE1E84BBD0003A7D63 /* Extensions */,
 				DCB6B5741E8209400097FFC6 /* AppDelegate.swift */,
-				DCB6B5761E8209400097FFC6 /* ViewController.swift */,
 				DCB6B5781E8209400097FFC6 /* Main.storyboard */,
 				DCB6B57B1E8209400097FFC6 /* Assets.xcassets */,
 				DCB6B57D1E8209400097FFC6 /* LaunchScreen.storyboard */,
@@ -298,8 +306,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC7873E01E84BBE0003A7D63 /* UIImageViewExtensions.swift in Sources */,
 				DC7873D91E835B09003A7D63 /* BLPlayerVC.swift in Sources */,
-				DCB6B5771E8209400097FFC6 /* ViewController.swift in Sources */,
 				DC7873D51E8359F8003A7D63 /* EntryModels.swift in Sources */,
 				DCB6B5751E8209400097FFC6 /* AppDelegate.swift in Sources */,
 				DC7873DB1E835D5B003A7D63 /* BLNetworkManager.swift in Sources */,
