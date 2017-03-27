@@ -12,6 +12,8 @@
 		DC7873D91E835B09003A7D63 /* BLPlayerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7873D81E835B09003A7D63 /* BLPlayerVC.swift */; };
 		DC7873DB1E835D5B003A7D63 /* BLNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7873DA1E835D5B003A7D63 /* BLNetworkManager.swift */; };
 		DC7873E01E84BBE0003A7D63 /* UIImageViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7873DF1E84BBE0003A7D63 /* UIImageViewExtensions.swift */; };
+		DC8D41601E88AA3200BE6001 /* BLAudioPlayerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8D415F1E88AA3200BE6001 /* BLAudioPlayerManager.swift */; };
+		DC8D41621E88AA4000BE6001 /* BLContentManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8D41611E88AA4000BE6001 /* BLContentManager.swift */; };
 		DCB6B5751E8209400097FFC6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB6B5741E8209400097FFC6 /* AppDelegate.swift */; };
 		DCB6B57A1E8209400097FFC6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCB6B5781E8209400097FFC6 /* Main.storyboard */; };
 		DCB6B57C1E8209400097FFC6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DCB6B57B1E8209400097FFC6 /* Assets.xcassets */; };
@@ -43,6 +45,8 @@
 		DC7873D81E835B09003A7D63 /* BLPlayerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BLPlayerVC.swift; sourceTree = "<group>"; };
 		DC7873DA1E835D5B003A7D63 /* BLNetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BLNetworkManager.swift; sourceTree = "<group>"; };
 		DC7873DF1E84BBE0003A7D63 /* UIImageViewExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageViewExtensions.swift; sourceTree = "<group>"; };
+		DC8D415F1E88AA3200BE6001 /* BLAudioPlayerManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BLAudioPlayerManager.swift; sourceTree = "<group>"; };
+		DC8D41611E88AA4000BE6001 /* BLContentManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BLContentManager.swift; sourceTree = "<group>"; };
 		DCB6B5711E8209400097FFC6 /* BLDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BLDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCB6B5741E8209400097FFC6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DCB6B5791E8209400097FFC6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -95,6 +99,8 @@
 			isa = PBXGroup;
 			children = (
 				DC7873DA1E835D5B003A7D63 /* BLNetworkManager.swift */,
+				DC8D415F1E88AA3200BE6001 /* BLAudioPlayerManager.swift */,
+				DC8D41611E88AA4000BE6001 /* BLContentManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -310,6 +316,8 @@
 				DC7873D91E835B09003A7D63 /* BLPlayerVC.swift in Sources */,
 				DC7873D51E8359F8003A7D63 /* EntryModels.swift in Sources */,
 				DCB6B5751E8209400097FFC6 /* AppDelegate.swift in Sources */,
+				DC8D41601E88AA3200BE6001 /* BLAudioPlayerManager.swift in Sources */,
+				DC8D41621E88AA4000BE6001 /* BLContentManager.swift in Sources */,
 				DC7873DB1E835D5B003A7D63 /* BLNetworkManager.swift in Sources */,
 				DC7873D71E835AFE003A7D63 /* BLEntryVC.swift in Sources */,
 			);
