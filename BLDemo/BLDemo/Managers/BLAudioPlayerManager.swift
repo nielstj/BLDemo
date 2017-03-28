@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import AVFoundation
 
 
 protocol BLAudioPlayerDelegate {
@@ -29,10 +30,27 @@ protocol BLAudioPlayerDataSource {
 
 final class BLAudioPlayer: NSObject {
     
+    var playerItem: AVPlayerItem?
+    var player: AVPlayer?
+    
+    func playFromURL(_ url: URL) {
+        
+        
+        
+    }
+    
+    
 }
 
 
 final class BLAudioPlayerManager: NSObject {
     static let shared = BLAudioPlayerManager()
-    var player = BLAudioPlayer()
+    var player : AVPlayer!
+    
+    public func playerLayerFromURL(_ url: URL) -> AVPlayerLayer {
+        let playerItem = AVPlayerItem(url: url)
+        player = AVPlayer(playerItem: playerItem)
+        return AVPlayerLayer(player: player)
+    }
+    
 }

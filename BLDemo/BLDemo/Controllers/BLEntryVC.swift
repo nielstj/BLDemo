@@ -19,12 +19,16 @@ class BLEntryVC: UIViewController {
     var entries : [BLEntry] = []
     var activityIndicator : UIActivityIndicatorView!
     
+    let contentManager = BLContentManager.shared
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.delegate = self
         collectionView.dataSource = self
         // TODO : MANAGE THREADING IN THIS LOAD ENTRIES METHOD
-        self.loadEntries()
+        contentManager.delegate = self
+        contentManager.fetchEntries()
+        
         DispatchQueue.main.async {
             self.playerWidgetViewBottomConstraint.constant = -self.playerWidgetView.bounds.height
             self.view.layoutIfNeeded()
@@ -32,35 +36,46 @@ class BLEntryVC: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        contentManager.delegate = self
+        self.entries = contentManager.entries
+        self.collectionView.reloadData()
         super.viewWillAppear(animated)
     }
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
     }
-    
-    private func loadEntries() {
-        DispatchQueue.main.async { [weak self] in
-            self?.activityIndicator = UIActivityIndicatorView()
-            self?.activityIndicator.center = (self?.view.center)!
-            self?.view.addSubview((self?.activityIndicator)!)
-            self?.activityIndicator.startAnimating()
-        }
-        let downloadEntries = BLNetworkManager.downloadEntries { unProcessedArray in
-            guard let response = unProcessedArray else {
-                print("Something is wrong")
-                return
-            }
-            // TODO : MAKE SURE THIS PART OF CODE RUN IN MAIN THREAD
-            self.entries = BLParser.parse(response)
-            DispatchQueue.main.async { [weak self] in
-                self?.collectionView.reloadData()
-                self?.activityIndicator.stopAnimating()
-                self?.activityIndicator.removeFromSuperview()
-            }
-        }
-        downloadEntries.resume()
-    }
 }
+
+
+extension BLEntryVC: BLContentManagerProtocol {
+ 
+    func contentManagerDidStartFetchEntries() {
+        
+    }
+    
+    func contentManagerDidFailedFetchEntries(error: Error) {
+        
+    }
+    
+    func contentManagerDidFinishFetchEntries(results: [BLEntry]) {
+        self.entries = results
+        self.collectionView.reloadData()
+        
+        // TEST PLAYER
+        DispatchQueue.main.async { [unowned self] in
+            self.playerWidgetViewBottomConstraint.constant = 0
+            UIView.animate(withDuration: 0.4) {
+                self.view.layoutIfNeeded()
+            }
+            let url = URL(string: (self.entries.first?.audioLink)!)!
+            let playerLayer = BLAudioPlayerManager.shared.playerLayerFromURL(url)
+            playerLayer.frame = self.playerWidgetView.bounds
+            self.playerWidgetView.layer.addSublayer(playerLayer)
+            BLAudioPlayerManager.shared.player.play()
+        }
+    }    
+}
+
 
 
 extension BLEntryVC : UICollectionViewDelegate, UICollectionViewDataSource {
