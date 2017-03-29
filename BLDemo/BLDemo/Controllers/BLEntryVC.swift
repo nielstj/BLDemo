@@ -92,6 +92,13 @@ extension BLEntryVC : UICollectionViewDelegate, UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "entryCell", for: indexPath) as! BLEntryCell
         let entry = entries[indexPath.row]
         cell.setupFrom(entry: entry)
+        cell.indexPath = indexPath
+        cell.playBtnCallback = { [unowned self](indexPath, state) in
+            switch state {
+            case .on: print("play track \(indexPath.row)")
+            case .off: print("pause track \(indexPath.row)")
+            }
+        }
         return cell
     }
     
@@ -113,7 +120,19 @@ extension BLEntryVC : UICollectionViewDelegate, UICollectionViewDataSource {
 }
 
 
+protocol Toggleable {
+    mutating func toggle()
+}
 
+enum OnOffSwitch: Toggleable {
+    case off, on
+    mutating func toggle() {
+        switch self {
+        case .off: self = .on
+        case .on: self = .off
+        }
+    }
+}
 
 
 class BLEntryCell : UICollectionViewCell {
@@ -124,6 +143,11 @@ class BLEntryCell : UICollectionViewCell {
     @IBOutlet weak var entryUserLbl: UILabel!
     @IBOutlet weak var userAvatar: UIImageView!
     @IBOutlet weak var userInfoLbl: UILabel!
+    
+    
+    var playBtnCallback: ((IndexPath, OnOffSwitch) -> Void)?
+    var playState: OnOffSwitch = .off
+    var indexPath: IndexPath!
     
     func cleanup() {
         self.entryTitleLbl.text = ""
@@ -145,4 +169,14 @@ class BLEntryCell : UICollectionViewCell {
         self.entryUserLbl.text = entry.author.name
         self.userInfoLbl.text = entry.author.name
     }
+    
+    @IBAction func playBtnTapped(_ sender: UIButton) {
+        playState.toggle()
+        let string = playState == .on ? "Pause" : "Play"
+        self.playBtn.setTitle(string, for: .normal)
+        playBtnCallback?(indexPath, self.playState)
+    }
+    
+    
+    
 }
